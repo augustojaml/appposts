@@ -1,0 +1,23 @@
+<div class="app-header">
+  <div>
+    <span>Bem vindo,</span>
+    <strong>{{ profilePost.name }}</strong>
+  </div>
+  <ion-avatar [routerLink]="['/profile']">
+    <img
+      [src]="profilePost.avatar ? profilePost.avatar : 'assets/avatar-default.png'"
+    />
+  </ion-avatar>
+</div>
+<ion-content fullscreen>
+  <div class="app-background-center-center app-background-center-post"></div>
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-button [routerLink]="['/signin']">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      <strong>Voltar para login</strong>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer> -->

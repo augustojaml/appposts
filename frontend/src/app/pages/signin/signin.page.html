@@ -1,0 +1,39 @@
+<ion-content fullscreen>
+  <div class="app-background-center-center">
+    <ion-img [src]="'assets/logo.png'"></ion-img>
+
+    <form>
+      <h5>Faça seu login</h5>
+
+      <div class="app-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-input
+          name="email"
+          [(ngModel)]="credential.email"
+          type="text"
+          placeholder="E-mail"
+        ></ion-input>
+      </div>
+
+      <div class="app-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-input
+          name="password"
+          [(ngModel)]="credential.password"
+          type="password"
+          placeholder="Senha"
+        ></ion-input>
+      </div>
+      <ion-button (click)="signIn()">Entrar</ion-button>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="signUp()">
+      <ion-icon name="enter-outline"></ion-icon>
+      <strong>Criar uma conta</strong>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

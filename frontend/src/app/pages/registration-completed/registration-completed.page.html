@@ -1,0 +1,18 @@
+<ion-content fullscreen>
+  <div class="app-background-center-center">
+    <div class="app-completed">
+      <ion-img [src]="'assets/check.png'"></ion-img>
+      <h1>Cadastramento<br />concluído</h1>
+      <p>Agora é só fazer seu login.</p>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button [routerLink]="['/signin']">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      <strong>Voltar para login</strong>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

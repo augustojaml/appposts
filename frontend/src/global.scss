@@ -1,0 +1,132 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+  --bgc-primary-700: #666360;
+  --bgc-primary-800: #312e38;
+  --bgc-primary-850: #28262e;
+  --bgc-primary-900: #232129;
+
+  --bgc-secondary-900: #ff9000;
+
+  --txt-primary-100: #f4ede8;
+  --txt-primary-800: #312e38;
+
+  --txt-secondary-900: #ff9000;
+
+  --font-family: "Roboto Slab", serif;
+}
+
+ion-input,
+ion-button,
+ion-toolbar {
+  font-family: var(--font-family) !important;
+}
+
+.app-background-center-center {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bgc-primary-800);
+  font-family: "Roboto Slab", serif;
+  color: var(--txt-primary-100);
+  flex-direction: column;
+  padding: 44px;
+  ion-img {
+    width: calc(100vw / 2);
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    h5 {
+      font-weight: bold;
+      margin: 50px 0;
+    }
+    ion-button {
+      width: 100% !important;
+      text-transform: capitalize;
+      --background: var(--bgc-secondary-900);
+      --color: var(--txt-primary-800);
+      font-weight: 600;
+      height: 56px;
+      font-size: 14px;
+    }
+  }
+}
+
+.app-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border-radius: 10px;
+  background: var(--bgc-primary-900);
+  width: 100%;
+  color: var(--bgc-primary-700);
+  margin-bottom: 10px;
+  ion-icon {
+    font-size: 24px !important;
+  }
+  ion-input {
+    background: var(--bgc-primary-900);
+    width: 100%;
+    height: 56px;
+    border: none;
+  }
+}
+
+ion-footer {
+  border-top: 2px solid var(--bgc-primary-900);
+  ion-toolbar {
+    --background: var(--bgc-primary-800);
+    text-align: center;
+    ion-button {
+      --background: transparent;
+      text-transform: capitalize;
+      --color: var(--txt-secondary-900);
+      --box-shadow: 0;
+      font-size: 14px;
+      ion-icon {
+        font-size: 20px;
+        margin-right: 18px;
+      }
+    }
+  }
+  &.footer-md::before {
+    background-image: none;
+    background: var(--bgc-primary-900);
+    top: -1px;
+  }
+}
+
+.tabs-bottom .toast-container {
+  background: red !important;
+}

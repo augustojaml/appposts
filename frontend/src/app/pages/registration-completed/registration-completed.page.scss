@@ -1,0 +1,21 @@
+.app-completed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  img {
+    width: calc(100vw / 2);
+  }
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  p {
+    margin-top: 16px;
+  }
+}
+
+ion-toolbar * {
+  color: var(--txt-primary-100);
+}

@@ -1,0 +1,70 @@
+<ion-content fullscreen>
+  <div class="app-background-center-center app-background-center-default">
+    <div class="header">
+      <ion-button class="route" (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <h5>Meu Perfil</h5>
+      <ion-button class="route" (click)="logOut()">
+        <ion-icon name="power-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <ion-avatar>
+      <img
+        [src]="profile.avatar ? profile.avatar : 'assets/avatar-default.png'"
+      />
+      <ion-button (click)="takePicture()">
+        <ion-icon name="camera-outline"></ion-icon>
+      </ion-button>
+    </ion-avatar>
+
+    <form>
+      <div class="app-input">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-input
+          name="name"
+          [(ngModel)]="profile.name"
+          type="text"
+          placeholder="Nome"
+        ></ion-input>
+      </div>
+
+      <div class="app-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-input
+          name="email"
+          [(ngModel)]="profile.email"
+          [readonly]="true"
+          type="text"
+          placeholder="E-mail"
+        ></ion-input>
+      </div>
+
+      <!-- <div class="separator">
+        <div class="app-input">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input type="text" placeholder="Senha atual"></ion-input>
+        </div>
+        <div class="app-input">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input type="text" placeholder="Nova senha"></ion-input>
+        </div>
+        <div class="app-input">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input type="text" placeholder="Confirmar senha"></ion-input>
+        </div>
+      </div> -->
+      <ion-button (click)="updateProfile()">Confirmar mudanças</ion-button>
+    </form>
+  </div>
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-button [routerLink]="['/signin']">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      <strong>Voltar para login</strong>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer> -->

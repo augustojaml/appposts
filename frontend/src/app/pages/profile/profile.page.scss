@@ -1,0 +1,56 @@
+.app-background-center-default {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+    ion-button.route {
+      --background: transparent;
+      --padding-start: 0;
+      --padding-end: 0;
+      text-transform: capitalize;
+      --color: var(--txt-secondary-100);
+      text-align: start;
+      --box-shadow: 0;
+      font-size: 14px;
+    }
+    h5 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  ion-avatar {
+    margin: 40px 0;
+    width: 180px;
+    height: 180px;
+    position: relative;
+    ion-button {
+      width: 40px;
+      height: 40px;
+      --background: var(--bgc-secondary-900);
+      --padding-start: 0;
+      --padding-end: 0;
+      --border-radius: 20px;
+      position: absolute;
+      bottom: 0;
+      right: 0px;
+    }
+  }
+  .separator {
+    margin: 15px 0 30px;
+    width: 100%;
+  }
+}
+
+/*
+--bgc-secondary-900: #ff9000;
+
+  --txt-primary-100: #f4ede8;
+*/
