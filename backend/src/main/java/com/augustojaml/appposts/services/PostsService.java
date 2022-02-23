@@ -12,6 +12,7 @@ import com.augustojaml.appposts.models.UserModel;
 import com.augustojaml.appposts.repositories.PostsRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -32,13 +33,13 @@ public class PostsService {
   }
 
   public List<PostModel> findAll() {
-    return this.postsRepository.findAll();
+    return this.postsRepository.findAll(Sort.by(Sort.Direction.DESC, "date"));
   }
 
   public PostModel save(PostModel postModel, MultipartFile file) {
     postModel.setImage(this.filesService.saveFile(file, "post"));
     postModel.setDate(new Date(System.currentTimeMillis()));
-    postModel.setAuthor(this.usersService.findById("621126acdad5a80775e77614"));
+    postModel.setAuthor(this.usersService.findMe());
     return this.postsRepository.save(postModel);
   }
 
@@ -48,7 +49,7 @@ public class PostsService {
       throw new ServiceObjectNotFoundException("Post not found");
     }
 
-    UserModel userModel = this.usersService.findById("6211262cdad5a80775e77613");
+    UserModel userModel = this.usersService.findMe();
 
     commentDTO.setDate(new Date(System.currentTimeMillis()));
     commentDTO.setAuthor(new AuthorDTO(userModel));

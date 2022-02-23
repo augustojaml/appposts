@@ -33,7 +33,7 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
   private static final String[] PUBLIC_MATCH = {
       "/avatar/**",
       // "/users/**",
-      // "/posts/**",
+      "/post/**",
   };
 
   private static final String[] PUBLIC_MATCHERS_POST = {
