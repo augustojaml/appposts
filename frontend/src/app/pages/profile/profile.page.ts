@@ -9,6 +9,7 @@ import { LocalStorageService } from 'src/services/local-storage.service';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { UsersServices } from 'src/services/users.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -29,19 +30,19 @@ export class ProfilePage implements OnInit {
     private authService: AuthServices,
     private localStorageService: LocalStorageService,
     private usersService: UsersServices,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    public alertController: AlertController
   ) {}
 
   updateProfile() {
     this.usersService.updateUser(this.profile).subscribe(
-      (response) => {
-        console.log(response);
+      (response: any) => {
+        this.alertUpdateProfile();
       },
       (error) => {
         console.log(error);
       }
     );
-    // this.router.navigate(['/signin']);
   }
 
   goBack() {
@@ -72,13 +73,35 @@ export class ProfilePage implements OnInit {
 
   async takePicture() {
     const image = await Camera.getPhoto({
-      quality: 90,
+      quality: 50,
       allowEditing: true,
       resultType: CameraResultType.Uri,
     });
 
-    this.profile.file = image.path;
-    this.profile.avatar = image.webPath;
+    this.profile.file = await fetch(image.webPath).then((img) => img.blob());
+    this.profile.fileName = `${new Date().getTime()}.${image.format}`;
+    this.profile.avatar = this.sanitizer.bypassSecurityTrustResourceUrl(
+      image.webPath
+    );
+  }
+
+  async alertUpdateProfile() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Perfil atualizado!',
+      message: 'Seu perfil foi atualizado com sucesso',
+      buttons: [
+        {
+          text: 'Ok',
+          id: 'confirm-button',
+          handler: () => {
+            this.router.navigate(['/posts']);
+          },
+        },
+      ],
+    });
+
+    await alert.present();
   }
 
   ngOnInit() {}

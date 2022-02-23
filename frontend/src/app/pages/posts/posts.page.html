@@ -9,15 +9,35 @@
     />
   </ion-avatar>
 </div>
-<ion-content fullscreen>
-  <div class="app-background-center-center app-background-center-post"></div>
+
+<ion-content class="post" fullscreen>
+  <ion-list class="app-background-center-post">
+    <div *ngIf="isLoading" class="loading">
+      <i class="bx bx-loader bx-spin bx-md"></i>
+    </div>
+    <ng-container *ngIf="!isLoading">
+      <ion-item *ngFor="let post of posts">
+        <ion-card>
+          <div class="post-header">
+            <ion-avatar>
+              <img
+                [src]="apiConfig.baseURL + '/avatar/' + post.authorPost.avatar"
+              />
+            </ion-avatar>
+            <div class="profile-info">
+              <strong>{{ post.authorPost.name }}</strong>
+              <span>{{ post.date | dateAgo }}</span>
+            </div>
+          </div>
+          <strong class="card-title">{{ post.title }}</strong>
+          <p class="card-body">{{ post.body }}</p>
+          <img [src]="apiConfig.baseURL + '/post/' + post.image" />
+        </ion-card>
+      </ion-item>
+    </ng-container>
+  </ion-list>
 </ion-content>
 
-<!-- <ion-footer>
-  <ion-toolbar>
-    <ion-button [routerLink]="['/signin']">
-      <ion-icon name="arrow-back-outline"></ion-icon>
-      <strong>Voltar para login</strong>
-    </ion-button>
-  </ion-toolbar>
-</ion-footer> -->
+<ion-button class="new-post" (click)="newPost()">
+  <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+</ion-button>

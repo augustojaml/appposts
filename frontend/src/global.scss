@@ -26,6 +26,7 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 :root {
+  --bgc-primary-100: #f4ede8;
   --bgc-primary-700: #666360;
   --bgc-primary-800: #312e38;
   --bgc-primary-850: #28262e;
@@ -34,6 +35,8 @@
   --bgc-secondary-900: #ff9000;
 
   --txt-primary-100: #f4ede8;
+  --txt-primary-200: #dbd5d0;
+  --txt-primary-300: #c3bdb9;
   --txt-primary-800: #312e38;
 
   --txt-secondary-900: #ff9000;
@@ -43,7 +46,8 @@
 
 ion-input,
 ion-button,
-ion-toolbar {
+ion-toolbar,
+ion-textarea {
   font-family: var(--font-family) !important;
 }
 

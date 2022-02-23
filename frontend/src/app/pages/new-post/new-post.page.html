@@ -1,0 +1,47 @@
+<div class="app-header">
+  <div>
+    <strong>Novo Post</strong>
+  </div>
+  <ion-button (click)="backToPost()">
+    <ion-icon color="danger" name="close-outline"></ion-icon>
+  </ion-button>
+</div>
+
+<ion-content class="app-background-center-center new-post">
+  <div class="app-background-center-new-post">
+    <div
+      *ngIf="post.image"
+      class="picture"
+      [style]="post.image && 'background: url('+ post.image +'); background-position: center; background-size: cover;'"
+    >
+      <ion-button class="trash" (click)="removePicture()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </div>
+    <div *ngIf="!post.image" class="picture">
+      <ion-button (click)="takePicture()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-button>
+    </div>
+    <form>
+      <div class="app-input">
+        <ion-input
+          name="title"
+          [(ngModel)]="post.title"
+          type="text"
+          placeholder="Titulo"
+        ></ion-input>
+      </div>
+      <div class="app-input">
+        <ion-textarea
+          name="body"
+          [(ngModel)]="post.body"
+          type="text"
+          rows="6"
+          placeholder="Descrição"
+        ></ion-textarea>
+      </div>
+      <ion-button (click)="sendPost()">Enviar</ion-button>
+    </form>
+  </div>
+</ion-content>

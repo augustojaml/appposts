@@ -12,8 +12,8 @@ import { LocalStorageService } from 'src/services/local-storage.service';
 })
 export class SignInPage implements OnInit {
   credential: CredentialDTO = {
-    email: 'brawziin@gmail.com',
-    password: '1234',
+    email: '',
+    password: '',
   };
 
   constructor(

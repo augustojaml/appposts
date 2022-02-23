@@ -23,10 +23,10 @@ class UsersServices {
 
   updateUser(profileDTO: ProfileDTO): Observable<any> {
     const formData: FormData = new FormData();
-    formData.set('id', profileDTO.id);
     formData.set('name', profileDTO.name);
     formData.set('email', profileDTO.email);
-    formData.set('file', profileDTO.file);
+
+    profileDTO.file && formData.set('file', profileDTO.file, 'file1.jpg');
 
     return this.httpClient.put(
       `${API_CONFIG.baseURL}/users/${profileDTO.id}`,

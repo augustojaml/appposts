@@ -38,15 +38,17 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/profile/profile.module').then((m) => m.ProfilePageModule),
   },
-  // {
-  //   path: 'profile/:id',
-  //   loadChildren: () =>
-  //     import('./pages/profile/profile.module').then((m) => m.ProfilePageModule),
-  // },
   {
     path: 'posts',
     loadChildren: () =>
       import('./pages/posts/posts.module').then((m) => m.PostsPageModule),
+  },
+  {
+    path: 'new-post',
+    loadChildren: () =>
+      import('./pages/new-post/new-post.module').then(
+        (m) => m.NewPostPageModule
+      ),
   },
 ];
 

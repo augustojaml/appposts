@@ -12,6 +12,7 @@ import { AuthServices } from 'src/services/auth.service';
 import { HttpAuthInterceptorProvider } from 'src/interceptors/http-auth.interceptor';
 import { LocalStorageService } from 'src/services/local-storage.service';
 import { UsersServices } from 'src/services/users.service';
+import { PostsServices } from 'src/services/posts.services';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { UsersServices } from 'src/services/users.service';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AuthServices,
     UsersServices,
+    PostsServices,
     HttpAuthInterceptorProvider,
     LocalStorageService,
   ],

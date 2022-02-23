@@ -11,9 +11,9 @@ import { UsersServices } from 'src/services/users.service';
 })
 export class SignupPage implements OnInit {
   createUser: CreateUserDTO = {
-    name: 'Marlon Lima',
-    email: 'marlon@gmail.com',
-    password: '1234',
+    name: '',
+    email: '',
+    password: '',
   };
 
   constructor(
