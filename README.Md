@@ -30,11 +30,11 @@ O AppPosts é um sistema de posts, com o mesmo conceito do Facebook ou Instagram
 ## Dark|Light Mode Mobile
 
 <p align="center" style="display: flex; justify-content: space-between">  
-  <img  alt="AppPosts" style="width: 150px; margin-right: 20px" src="app-mobile-dark1.png"/> 
-  <img alt="AppPosts" style="width: 150px" src="app-mobile-light1.png"/> 
-  
-  <img  alt="AppPosts" style="width: 150px; margin-right: 20px" src="app-mobile-dark2.png"/> 
-  <img alt="AppPosts" style="width: 150px" src="app-mobile-light2.png"/> 
+  <img  alt="AppPosts" style="width: 150px; margin-right: 20px" src="01.png"/>  
+  <img  alt="AppPosts" style="width: 150px; margin-right: 20px" src="02.png"/> 
+  <img  alt="AppPosts" style="width: 150px; margin-right: 20px" src="03.png"/> 
+  <img  alt="AppPosts" style="width: 150px; margin-right: 20px" src="04.png"/> 
+  <img  alt="AppPosts" style="width: 150px; margin-right: 20px" src="05.png"/> 
 </p>
 
 <br>
