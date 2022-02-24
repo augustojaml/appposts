@@ -27,8 +27,6 @@ O AppPosts é um sistema de posts, com o mesmo conceito do Facebook ou Instagram
 
 ## Versão mobile
 
-## Dark|Light Mode Mobile
-
 <p align="center" style="display: flex; justify-content: space-between">  
   <img  alt="AppPosts" style="width: 150px; margin-right: 20px" src="01.png"/>  
   <img  alt="AppPosts" style="width: 150px; margin-right: 20px" src="02.png"/> 
@@ -40,6 +38,12 @@ O AppPosts é um sistema de posts, com o mesmo conceito do Facebook ou Instagram
 <br>
 
 ## Tecnologias
+
+<p align="center" style="display: flex; justify-content: space-between">  
+  <img  alt="AppPosts" style="width: 150px; margin-right: 20px" src="springboot.png"/>  
+  <img  alt="AppPosts" style="width: 150px; margin-right: 20px" src="mongodb.png"/> 
+  <img  alt="AppPosts" style="width: 150px; margin-right: 20px" src="ionic.png"/>
+</p>
 
 Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 
@@ -67,6 +71,21 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
   - code --install-extension vscjava.vscode-spring-initializr
 
 <br>
+
+# Rodando a Aplicação Backend
+
+- Apos instalar a extensões acima
+  - Configurar a conexão do seu mongo db em `appposts/backend/src/main/resources/application.properties`
+  - Abrir o projeto, no lado esquerdo clicar em Spring Boot Dashboard e depois em start
+  - Instalar a extensão do vscode Thunder Client e import os arquivos de rotas em `appposts/backend/thunder-collection_[#APP-POSTS].json`
+  - Cadastre duas Roles ROLE_ADMIN e ROLE_USER
+  - Cadastre um usuário com as duas ROLE cadastradas acima
+
+# Rodando a Aplicação Frontend
+
+- Abra a pasta `/appposts/frontend`
+- yarn install
+- ionic serve
 
 ## Licença
 
