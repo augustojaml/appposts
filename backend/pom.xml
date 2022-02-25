@@ -84,8 +84,8 @@
 						</exclude>
 					</excludes>
 				</configuration>
-			</plugin>
-		</plugins>
+			</plugin>			
+		</plugins>		
 	</build>
 
 </project>

@@ -31,14 +31,19 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
   private JWTUtil jwtUtil;
 
   private static final String[] PUBLIC_MATCH = {
-      "/avatar/**",
+      "/uploads/**",
       // "/users/**",
       "/post/**",
   };
 
+  private static final String[] PUBLIC_MATCHERS_GET = {
+      "/roles/**"
+  };
+
   private static final String[] PUBLIC_MATCHERS_POST = {
       "/auth/refresh-token",
-      "/users"
+      "/users",
+      "/roles"
   };
 
   private static final String[] PUBLIC_MATCHERS_PUT = {
@@ -55,6 +60,7 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
 
     http.authorizeRequests()
         .antMatchers(PUBLIC_MATCH).permitAll()
+        .antMatchers(HttpMethod.GET, PUBLIC_MATCHERS_GET).permitAll()
         .antMatchers(HttpMethod.POST, PUBLIC_MATCHERS_POST).permitAll()
         .antMatchers(HttpMethod.PUT, PUBLIC_MATCHERS_PUT).permitAll()
         .anyRequest().authenticated();

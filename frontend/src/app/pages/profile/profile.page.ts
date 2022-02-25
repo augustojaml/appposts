@@ -73,7 +73,7 @@ export class ProfilePage implements OnInit {
 
   async takePicture() {
     const image = await Camera.getPhoto({
-      quality: 50,
+      quality: 30,
       allowEditing: true,
       resultType: CameraResultType.Uri,
     });

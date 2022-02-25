@@ -34,7 +34,7 @@ public class RolesResource {
     return ResponseEntity.ok().body(roleDTO);
   }
 
-  @PreAuthorize("hasAnyRole('ADMIN')")
+  // @PreAuthorize("hasAnyRole('ADMIN')")
   @RequestMapping(method = RequestMethod.GET)
   public ResponseEntity<List<RoleDTO>> findAll() {
     List<RoleModel> rolesModel = this.rolesService.findAll();
@@ -42,7 +42,7 @@ public class RolesResource {
     return ResponseEntity.ok().body(roleDTOs);
   }
 
-  @PreAuthorize("hasAnyRole('ADMIN')")
+  // @PreAuthorize("hasAnyRole('ADMIN')")
   @RequestMapping(method = RequestMethod.POST)
   public ResponseEntity<Void> save(@Valid @RequestBody RoleDTO roleDTO) {
     RoleModel roleModel = this.rolesService.save(this.rolesService.fromDTO(roleDTO));

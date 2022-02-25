@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  appposts:
+    build: .
+    image: 'springboot'
+    container_name: appposts
+    ports:
+      - '8080:8080'
+    networks:
+      - network_local
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - '27017:27017'
+    networks:
+      - network_local
+
+networks:
+  network_local:
