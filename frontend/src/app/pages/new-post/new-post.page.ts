@@ -24,9 +24,10 @@ export class NewPostPage implements OnInit {
 
   async takePicture() {
     const image = await Camera.getPhoto({
-      quality: 30,
+      quality: 20,
       allowEditing: true,
       resultType: CameraResultType.Uri,
+      width: 500,
     });
 
     this.post.file = await fetch(image.webPath).then((img) => img.blob());
