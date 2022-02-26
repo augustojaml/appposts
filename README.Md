@@ -78,8 +78,7 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
   - Configurar a conexão do seu mongo db em `appposts/backend/src/main/resources/application.properties`
   - Abrir o projeto, no lado esquerdo clicar em Spring Boot Dashboard e depois em start
   - Instalar a extensão do vscode Thunder Client e import os arquivos de rotas em `appposts/backend/thunder-collection_[#APP-POSTS].json`
-  - Cadastre duas Roles ROLE_ADMIN e ROLE_USER
-  - Cadastre um usuário com as duas ROLE cadastradas acima
+  - Você pode criar uma conta ou usar o usuário admin@email.com com a senha 1234 para iniciar a aplicação
 
 # Rodando a Aplicação Frontend
 
